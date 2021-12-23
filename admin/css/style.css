@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Roboto&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F5;
+}
+
+.columns {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0px 0;
+}
+
+.column {
+    flex: 1;
+    /*border: 1px solid #666;*/
+    transition: 0.3s;
+}
+
+.column:first-child {
+    margin-left: 0;
+}
+
+.res-title {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 100px 10px 30px 50px;
+}
+
+.res-btn {
+    width: fit-content;
+    margin: 0px 0px 20px 50px;
+    display: block;
+}
+
+.res-btn button {
+    height: 40px;
+    width: fit-content;
+    padding: 0px 50px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    background-color: #FF6B00;
+    color: #F5F5F5;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.res-btn button:hover {
+    background-color: transparent;
+    border-color: #FF6B00;
+    color: #FF6B00;
+}
+
+.full-form {
+    background-color: #F5F5F5;
+    width: 60%;
+    margin: 100px auto 50px auto;
+    padding: 30px 20px 50px 20px;
+    border-radius: 10px;
+    border: 2px solid #DADADA;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.for-mobile {
+    display: none;
+}
+
+.full-form .login-title {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #FF6B00;
+}
+
+.full-form .username,
+.pass {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #F5F5F5;
+    height: 40px;
+    width: 100%;
+    padding: 0px 30px;
+    border: 2px solid #FF6B00;
+    border-radius: 50px;
+    outline: none;
+    color: #666;
+}
+
+.full-form .username {
+    margin: 20px auto;
+}
+
+.full-form .login-btn {
+    height: 40px;
+    width: 120px;
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #FF6B00;
+    color: #F5F5F5;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    margin: 30px auto 0px auto;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.full-form .login-btn:hover {
+    background-color: transparent;
+    color: #FF6B00;
+    border-color: #FF6B00;
+}
+
+@media (max-width: 980px) {
+    .columns .column {
+        flex-basis: 40%;
+    }
+    .columns .column:last-child {
+        flex-basis: 100;
+        margin: 0;
+    }
+    .columns .column:nth-last-child(2) {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 680px) {
+    .columns .column {
+        flex-basis: 100%;
+        margin: 0px;
+    }
+    .columns .column:first-child {
+        display: none;
+    }
+    .for-mobile {
+        display: block;
+        font-family: 'Hind Siliguri', sans-serif;
+        text-align: center;
+        font-size: 17px;
+        padding: 20px 30px;
+    }
+    .full-form {
+        width: 90%;
+        box-shadow: none;
+        margin: 50px auto 0px auto;
+    }
+    .for-mobile a {
+        text-decoration: none;
+        color: #FF6B00;
+    }
+}
