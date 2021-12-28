@@ -85,6 +85,7 @@ if ((isset($_POST['regBtn']))) {
                 <div class="mb-3">
                     <input type="submit" name="regBtn" class="btn btn-success fw-bold" value="Register">
                 </div>
+                <a href="login.php">login</a>
             </form>
         </div>
     </div>

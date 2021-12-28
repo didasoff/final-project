@@ -13,22 +13,17 @@ if(isset($_POST['loginBtn'])){
     $rowcount = mysqli_num_rows($result);
     $row = mysqli_fetch_assoc($result);
 
-    $id = $row['id'];
-    $name = $row['name'];
-    $user_id = $row['user_id'];
-
     if(!empty($email) && !empty($password)){
        
         if($rowcount == 1 && $row['email'] = $email &&  $row['password'] = $password){
 
-            $_SESSION['user_id'] = $user_id;
-            $_SESSION['name'] = $name;
-            $_SESSION['userId'] = $id;
-            
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['name'] = $row['name'];
+
             if($row['role'] == 1){
 
                 $_SESSION['admin'] = "admin";                 
-                header('Location:index.php');
+                header('Location:dashboard.php');
 
             }else if(($row['role'] == 2)){
                
@@ -39,7 +34,12 @@ if(isset($_POST['loginBtn'])){
                
                 $_SESSION['user'] = "user";
                 header('Location:../index.php');
+            }else{
+                $_SESSION['msg'] = "No role you have";
+            $_SESSION['msg_code'] = "error";
+
             }
+
         }else{
 
             $_SESSION['msg'] = "No Data";
